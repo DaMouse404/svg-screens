@@ -1,0 +1,19 @@
+#define SCREEN_{{screen_id_upper}}_SHAPE_{{item_id_upper}} {{item_counter}}
+
+const screen_shape_rect screen_{{screen_id}}_shape_{{item_id}} = {
+	.super = {
+		.id = SCREEN_{{screen_id_upper}}_SHAPE_{{item_id_upper}},
+		.type = SCREEN_SHAPE_TYPE_RECT{{#colour}},
+		.colour = {
+			{{red}},
+			{{green}},
+			{{blue}}
+		}{{/colour}}{{#prev_item}},
+		.next = (screen_shape*) &screen_{{screen_id}}_shape_{{prev_item}}
+        {{/prev_item}}
+	},
+	.startx = {{startx}},
+	.starty = {{starty}},
+	.endx = {{endx}},
+	.endy = {{endy}}
+};
