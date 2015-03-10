@@ -55,7 +55,13 @@ for child in root:
     if colour != None:
         view_data['colour'] = colour
 
-    print (renderer.render_path(child.tag + '.mustache', view_data))
+    nsIndex = child.tag.find('}')
+    if nsIndex >= 0:
+        item_tag = child.tag[nsIndex+1:]
+    else:
+        item_tag = child.tag
+
+    print (renderer.render_path(item_tag + '.mustache', view_data))
 
     item_counter += 1
     prev_item = item_id
