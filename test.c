@@ -33,7 +33,7 @@ typedef struct screen {
 
 #include "test.h"
 
-int main() {
+int main(void) {
 	screen_shape *shape = (screen_shape *) &screen_menu_shape_4;
 	screen_shape_rect *shape_rect = (screen_shape_rect *) &screen_menu_shape_4;
 
